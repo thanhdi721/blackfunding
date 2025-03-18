@@ -6,7 +6,7 @@ export default function Header() {
   const [activeTab, setActiveTab] = useState("block-funding")
 
   return (
-    <header className="container rounded-2xl border border-[#353535] opacity-60 bg-[linear-gradient(131deg,#000_0%,#272525_30.66%,#272525_62.3%,#000_98.34%)] backdrop-blur-[10px]">
+    <header className="rounded-2xl border border-[#353535] opacity-60 bg-[linear-gradient(131deg,#000_0%,#272525_30.66%,#272525_62.3%,#000_98.34%)] backdrop-blur-[10px] md:container">
       <div className=" mx-auto px-4 py-3">
         <div className="flex items-center justify-between">
           <div className="flex items-center space-x-4">

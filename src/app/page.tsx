@@ -4,7 +4,7 @@ import imageBottom from "../../public/assets/images/bg-login.svg"
 export default function Home() {
   return (
     <main className="relative flex min-h-screen items-center justify-center">
-      <div className="w-full max-w-md space-y-6 bg-black/90 rounded-lg shadow-2xl">
+      <div className="w-full max-w-2xl space-y-6 bg-black/90 rounded-lg shadow-2xl mx-2">
         <LoginForm />
       </div>
       <Image 
