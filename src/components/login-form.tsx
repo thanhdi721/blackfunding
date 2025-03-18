@@ -1,23 +1,28 @@
 "use client"
 
 import { useState } from "react"
-import { Eye, EyeOff } from "lucide-react"
+import { Eye, EyeOff, Check } from "lucide-react"
 import Image from "next/image"
 import iconMail from "../../public/assets/images/icon-main.svg"
 import iconPassword from "../../public/assets/images/icon-pass.svg"
 
 export default function LoginForm() {
   const [showPassword, setShowPassword] = useState(false)
+  const [isChecked, setIsChecked] = useState(false)
 
   const togglePasswordVisibility = () => {
     setShowPassword(!showPassword)
+  }
+
+  const toggleCheck = () => {
+    setIsChecked(!isChecked)
   }
 
   return (
     <div className="w-full p-10 space-y-6 bg-[#000000] rounded-xl shadow-2xl">
     <div className="space-y-4">
       <div className="space-y-3">
-        <label htmlFor="email" className="block text-white text-sm font-medium">
+        <label htmlFor="email" className="block text-white text-base font-medium">
           Email Address
         </label>
         <div className="relative">
@@ -31,13 +36,13 @@ export default function LoginForm() {
           <input
             id="email"
             type="email"
-            className="w-full pl-10 px-3 py-3 !bg-[#0d0d0d] border border-gray-700 rounded-md text-white focus:outline-none focus:ring-1 focus:ring-blue-500"
+            className="w-full pl-10 px-3 py-5 !bg-[#0d0d0d] border border-gray-700 rounded-md text-white focus:outline-none focus:ring-1 focus:ring-blue-500"
           />
         </div>
       </div>
 
       <div className="space-y-3">
-        <label htmlFor="password" className="block text-white text-sm font-medium">
+        <label htmlFor="password" className="block text-white text-base font-medium">
           Password
         </label>
         <div className="relative">
@@ -51,7 +56,7 @@ export default function LoginForm() {
           <input
             id="password"
             type={showPassword ? "text" : "password"}
-            className="w-full pl-10 px-3 py-3 !bg-[#0d0d0d] border border-gray-700 rounded-md text-white pr-10 focus:outline-none focus:ring-1 focus:ring-blue-500"
+            className="w-full pl-10 px-3 py-5 !bg-[#0d0d0d] border border-gray-700 rounded-md text-white pr-10 focus:outline-none focus:ring-1 focus:ring-blue-500"
           />
           <button
             type="button"
@@ -65,12 +70,12 @@ export default function LoginForm() {
       </div>
 
       <div className="flex items-center justify-between p-3">
-        <div className="flex items-center space-x-2">
-          <input
-            type="checkbox"
-            id="remember"
-            className="w-4 h-4 rounded border-gray-600 !bg-[#0d0d0d] text-blue-600 focus:ring-blue-500 focus:ring-offset-0"
-          />
+        <div className="flex items-center space-x-2 cursor-pointer" onClick={toggleCheck}>
+          <div 
+            className={`w-4 h-4 rounded-full border border-gray-600 transition-colors duration-200 ${isChecked ? 'bg-blue-600' : 'bg-black'}`}
+          >
+            {isChecked && <Check className="w-4 h-4 text-white" />}
+          </div>
           <label htmlFor="remember" className="text-sm text-gray-300">
             Remember me
           </label>
@@ -84,7 +89,7 @@ export default function LoginForm() {
     <div className="flex justify-center">
       <button
         type="submit"
-        className="w-full max-w-md bg-[#131212] text-white text-sm rounded-[60px] py-3 px-4 font-medium transition-colors border border-[rgba(255,255,255,0.40)] shadow-[-10px_-10px_20px_0px_#3C3C3C_inset,10px_10px_20px_0px_#1E1E1E,-4px_-4px_8px_0px_rgba(77,77,77,0.25)_inset,4px_4px_8px_0px_#1E1E1E_inset]"
+        className="w-full max-w-md bg-[#131212] text-white text-sm rounded-[60px] py-5 px-4 font-medium transition-colors border border-[rgba(255,255,255,0.40)] shadow-[-10px_-10px_20px_0px_#3C3C3C_inset,10px_10px_20px_0px_#1E1E1E,-4px_-4px_8px_0px_rgba(77,77,77,0.25)_inset,4px_4px_8px_0px_#1E1E1E_inset]"
       >
         Submit
       </button>
