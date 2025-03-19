@@ -74,11 +74,11 @@ export default function Home() {
     <main className="min-h-screen bg-gradient-to-r from-[#011327] to-black text-white">
 
 
-      <div className="mx-3 md:mx-auto px-4 py-8 space-y-8 pb-[170px]">
+      <div className="mx-3 md:mx-auto px-4 py-8 space-y-8">
         {/* Commercial Services Section */}
         <section>
           <SectionTitle title="Commerical Services" />
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
             {commercialServices.map((service) => (
               <ServiceCard
                 key={service.id}
@@ -93,7 +93,7 @@ export default function Home() {
         {/* Business Services Section */}
         <section>
           <SectionTitle title="Business Services" />
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
             {businessServices.map((service) => (
               <ServiceCard
                 key={service.id}
@@ -109,7 +109,7 @@ export default function Home() {
         {/* Social Services Section */}
         <section>
           <SectionTitle title="Social Service" />
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
             {socialServices.map((service) => (
               <ServiceCard
                 key={service.id}

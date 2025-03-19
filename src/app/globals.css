@@ -57,3 +57,19 @@ body {
   }
 }
 
+.card-gradient {
+  border-radius: 16px;
+  border: 1px solid #353535;
+  
+  opacity: 0.6;
+  background: var(--03, linear-gradient(131deg, #000 0%, #272525 30.66%, #272525 62.3%, #000 98.34%));
+  backdrop-filter: blur(10px);
+}
+
+.card-gradient-inner {
+  border-radius: 16px;
+  opacity: 0.7;
+  background: var(--rdl, radial-gradient(52.76% 55.4% at 49.17% 29.75%, rgba(255, 255, 255, 0.50) 0%, rgba(255, 255, 255, 0.41) 10%, rgba(255, 255, 255, 0.26) 28%, rgba(255, 255, 255, 0.15) 47%, rgba(255, 255, 255, 0.07) 65%, rgba(255, 255, 255, 0.02) 83%, rgba(255, 255, 255, 0.00) 100%));
+  backdrop-filter: blur(10px);
+  
+}
